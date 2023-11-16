@@ -12,6 +12,15 @@ jobs:
       - name: checkout repo content
         uses: actions/checkout@v2
 
+      #due to the error we met, we add clear actions cache
+      - name: Clear Actions Cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.cache
+            ~/.local/share/virtualenvs
+          key: ${{ runner.os }}-${{ hashFiles('**/*.lock') }}
+
       - name: setup python
         uses: actions/setup-python@v2
         with:
