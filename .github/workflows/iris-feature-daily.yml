@@ -15,8 +15,8 @@ jobs:
       - name: setup python
         uses: actions/setup-python@v2
         with:
-          python-version: 'latest'
-          architecture: 'arm64'
+          python-version: '3.13.0-alpha.1'
+          # arch: 'arm64'
           
       - name: install python packages
         run: |
